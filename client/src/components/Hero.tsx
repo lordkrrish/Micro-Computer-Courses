@@ -51,7 +51,7 @@ export function Hero() {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-primary text-background font-bold rounded-full shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] transition-all text-lg"
           >
-            Explore Courses
+            Get Started
           </motion.button>
         </motion.div>
       </div>

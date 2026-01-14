@@ -5,12 +5,49 @@ import { CourseCard } from "@/components/CourseCard";
 import { useCourses } from "@/hooks/use-courses";
 import { Loader2, ServerCrash } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
+import { cn } from "@/lib/utils";
+
+const Navbar = () => {
+  const links = [
+    { name: "Home", href: "#" },
+    { name: "All Courses", href: "#courses" },
+    { name: "About Us", href: "#about" },
+    { name: "Contact Info", href: "#contact" },
+  ];
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0f172a]/80 backdrop-blur-md border-b border-white/10">
+      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <span className="text-xl font-display font-bold text-white">MicroComputer</span>
+        <div className="hidden md:flex items-center gap-8">
+          {links.map((link) => (
+            <a 
+              key={link.name} 
+              href={link.href}
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+            >
+              {link.name}
+            </a>
+          ))}
+          <a 
+            href="#courses"
+            className="px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 rounded-full text-sm font-medium transition-all"
+          >
+            Get Started
+          </a>
+        </div>
+      </div>
+    </nav>
+  );
+};
 
 export default function Home() {
   const { data: courses, isLoading, error } = useCourses();
 
   return (
-    <div className="min-h-screen bg-[#0f172a] text-white">
+    <div className="min-h-screen bg-[#0f172a] text-white pt-16">
+      <Navbar />
       <Hero />
 
       <section id="courses" className="py-24 bg-black/40 relative">
@@ -45,7 +82,21 @@ export default function Home() {
         </div>
       </section>
 
-      <ContactSection />
+      <div id="about" className="py-24 container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-8">About Us</h2>
+          <p className="text-lg text-gray-400 leading-relaxed">
+            MicroComputer is a premier institute dedicated to providing high-quality computer education. 
+            Our mission is to empower students with the skills needed to succeed in the digital age. 
+            With experienced instructors and a practical approach to learning, we ensure that every student 
+            gains hands-on experience and industry-relevant knowledge.
+          </p>
+        </div>
+      </div>
+
+      <div id="contact">
+        <ContactSection />
+      </div>
       
       <Footer />
     </div>
