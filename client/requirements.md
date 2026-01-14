@@ -1,8 +1,9 @@
 ## Packages
-framer-motion | Animations for the tech feel (matrix effects, fade-ins)
-lucide-react | Icons for the courses and contact info
+framer-motion | Smooth entrance animations and scroll effects for a premium feel
+lucide-react | High-quality icons for courses and contact details
 
 ## Notes
-Using a dark theme with a tech-inspired background GIF as requested.
-Fonts: 'Share Tech Mono' for headers (tech feel) and 'Inter' for readability.
-Courses are static for now based on the prompt, but I'll set up the structure to fetch from API if available.
+Design Direction: Premium Dark Glassmorphism.
+Background: Abstract tech loop GIF as requested.
+Fonts: 'Outfit' for headers (modern, geometric), 'Inter' for body.
+Colors: Deep blues, purples, and neon accents (cyan/magenta) against a dark backdrop.

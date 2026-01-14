@@ -1,83 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* Tech/Matrix Theme Colors */
-  --background: 220 15% 10%; /* Dark slate/black */
-  --foreground: 150 50% 90%; /* Light green/terminal text */
-  
-  --primary: 150 100% 40%; /* Matrix Green */
-  --primary-foreground: 220 20% 10%;
-  
-  --secondary: 220 15% 16%; /* Darker card bg */
-  --secondary-foreground: 150 30% 80%;
-  
-  --muted: 220 15% 20%;
-  --muted-foreground: 220 10% 60%;
-  
-  --accent: 180 100% 40%; /* Cyan accent */
-  --accent-foreground: 220 20% 10%;
-  
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 98%;
-  
-  --border: 150 30% 20%;
-  --input: 220 15% 16%;
-  --ring: 150 100% 40%;
-  
-  --radius: 0.5rem;
-  
-  --font-tech: 'Share Tech Mono', monospace;
   --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+
+  /* Premium Dark Theme Palette */
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+
+  --card: 222 47% 11%; /* Slightly lighter than bg, handled by glassmorphism usually */
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222 47% 11%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 190 100% 50%; /* Electric Cyan */
+  --primary-foreground: 222 47% 11%;
+
+  --secondary: 280 100% 65%; /* Electric Purple */
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+
+  --accent: 190 100% 50%;
+  --accent-foreground: 222 47% 11%;
+
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217 33% 17%;
+  --input: 217 33% 17%;
+  --ring: 190 100% 50%;
 }
 
 @layer base {
+  * {
+    @apply border-border;
+  }
   body {
-    @apply bg-background text-foreground antialiased font-sans;
-    background-color: black;
+    @apply bg-background text-foreground antialiased font-sans selection:bg-primary/30 selection:text-primary-foreground;
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10 shadow-xl;
   }
   
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-tech);
-    @apply tracking-wide;
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300;
   }
-}
 
-/* Custom scrollbar for tech feel */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: hsl(var(--background));
-}
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--border));
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary));
-}
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500;
+  }
 
-/* Matrix rain overlay utility */
-.matrix-bg {
-  position: relative;
-}
-.matrix-bg::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
-    url('https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif');
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-  opacity: 0.3;
-  pointer-events: none;
+  .glow-text {
+    text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+  }
 }
