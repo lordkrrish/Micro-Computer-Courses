@@ -1,12 +1,9 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
-export function Hero() {
-  const scrollToCourses = () => {
-    const coursesSection = document.getElementById('courses');
-    coursesSection?.scrollIntoView({ behavior: 'smooth' });
-  };
+import { Link } from "wouter";
 
+export function Hero() {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Dynamic Background with Overlay */}
@@ -45,14 +42,15 @@ export function Hero() {
             Master the future of technology with our premium courses in hardware, software, and development.
           </p>
 
-          <motion.button
-            onClick={scrollToCourses}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-primary text-background font-bold rounded-full shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] transition-all text-lg"
-          >
-            Get Started
-          </motion.button>
+          <Link href="/courses">
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block px-8 py-4 bg-primary text-background font-bold rounded-full shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] transition-all text-lg cursor-pointer"
+            >
+              Get Started
+            </motion.a>
+          </Link>
         </motion.div>
       </div>
 
