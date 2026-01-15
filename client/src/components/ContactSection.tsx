@@ -36,11 +36,21 @@ export function ContactSection() {
                 </div>
 
                 <div className="flex items-center gap-4 group">
+                  <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                    <Mail className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-500 uppercase tracking-wider">Email (Required)</p>
+                    <p className="text-lg font-semibold text-white truncate max-w-[200px] md:max-w-none">microcomputer@gmail.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 group">
                   <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-all">
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500 uppercase tracking-wider">Phone</p>
+                    <p className="text-xs text-gray-500 uppercase tracking-wider">Phone (Optional)</p>
                     <p className="text-lg font-semibold text-white">+91 9955864923</p>
                   </div>
                 </div>
@@ -68,10 +78,14 @@ export function ContactSection() {
                   <input type="text" className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="John Doe" />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-gray-400 mb-1">Phone Number</label>
+                  <label className="block text-xs font-medium text-gray-400 mb-1">Email (Necessary)</label>
+                  <input type="email" required className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="yourname@gmail.com" />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-gray-400 mb-1">Phone Number (Optional)</label>
                   <input type="tel" className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="+91..." />
                 </div>
-                <button className="w-full py-3 rounded-lg bg-gradient-to-r from-primary to-cyan-600 text-black font-bold hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all">
+                <button type="submit" className="w-full py-3 rounded-lg bg-gradient-to-r from-primary to-cyan-600 text-black font-bold hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all">
                   Send Message
                 </button>
               </form>
