@@ -51,7 +51,9 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="text-xs text-gray-500 uppercase tracking-wider">Visit Us</p>
-                    <p className="text-lg font-semibold text-white">Main Street, Tech City</p>
+                    <p className="text-lg font-semibold text-white">
+                      Jharkhand, Godda, Mahagama
+                    </p>
                   </div>
                 </div>
               </div>
