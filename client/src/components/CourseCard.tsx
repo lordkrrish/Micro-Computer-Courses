@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
-import { type Course } from "@shared/schema";
 import { Code2, Monitor, Terminal, Cpu } from "lucide-react";
 import { Link } from "wouter";
 
 interface CourseCardProps {
-  course: Course;
+  course: {
+    name: string;
+    description: string;
+  };
   index: number;
 }
 
