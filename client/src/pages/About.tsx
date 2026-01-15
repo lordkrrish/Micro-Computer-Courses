@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { CheckCircle2, Trophy, Users } from "lucide-react";
+import { CheckCircle2, Trophy, Users, Star } from "lucide-react";
 
 export default function About() {
   const features = [
@@ -35,6 +35,48 @@ export default function About() {
             With experienced instructors and a practical approach to learning, we ensure that every student 
             gains hands-on experience and industry-relevant knowledge.
           </p>
+        </div>
+
+        {/* Leadership Section */}
+        <div className="mb-24 text-center">
+          <h3 className="text-3xl font-display font-bold mb-12 relative inline-block">
+            Meet Our Leadership
+            <div className="absolute -bottom-4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
+          </h3>
+          
+          <div className="flex flex-col md:flex-row justify-center gap-10 max-w-4xl mx-auto">
+            {/* Owner */}
+            <div className="relative group p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-primary/30 transition-all duration-300">
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2">
+                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/30">
+                  <Star className="w-6 h-6 text-black fill-black" />
+                </div>
+              </div>
+              <h4 className="text-2xl font-display font-bold text-white mt-4 mb-2 group-hover:text-primary transition-colors">
+                Rakesh Sharma
+              </h4>
+              <p className="text-primary font-medium tracking-wide text-sm uppercase mb-4">Owner & Founder</p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Visionary leader committed to excellence in education and shaping the future of IT professionals.
+              </p>
+            </div>
+
+            {/* Teacher */}
+            <div className="relative group p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-purple-500/30 transition-all duration-300">
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2">
+                <div className="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center shadow-lg shadow-purple-500/30">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+              </div>
+              <h4 className="text-2xl font-display font-bold text-white mt-4 mb-2 group-hover:text-purple-400 transition-colors">
+                Bipin Sir
+              </h4>
+              <p className="text-purple-400 font-medium tracking-wide text-sm uppercase mb-4">Senior Instructor</p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Expert educator with a passion for teaching complex concepts with simplicity and practical examples.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Features Grid */}
