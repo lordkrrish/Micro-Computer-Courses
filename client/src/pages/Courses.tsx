@@ -1,12 +1,20 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { CourseCard } from "@/components/CourseCard";
-import { useCourses } from "@/hooks/use-courses";
-import { Loader2, ServerCrash } from "lucide-react";
+import { BookOpen, Code, Database, Cpu, Layout, Globe, Braces } from "lucide-react";
+
+// Using hardcoded data instead of database as requested
+const STATIC_COURSES = [
+  { id: 1, name: "ADCA", description: "Advance Diploma in Computer Application", icon: <Database /> },
+  { id: 2, name: "DCA", description: "Diploma in Computer Application", icon: <BookOpen /> },
+  { id: 3, name: "HTML", description: "HyperText Markup Language", icon: <Globe /> },
+  { id: 4, name: "HARDWARE", description: "Computer Hardware Networking", icon: <Cpu /> },
+  { id: 5, name: "PYTHON", description: "Core and Advanced Python Programming", icon: <Braces /> },
+  { id: 6, name: "CSS", description: "Cascading Style Sheets & Modern Design", icon: <Layout /> },
+  { id: 7, name: "JAVA", description: "Java Enterprise Edition & Development", icon: <Code /> },
+];
 
 export default function Courses() {
-  const { data: courses, isLoading, error } = useCourses();
-
   return (
     <div className="min-h-screen bg-[#0f172a] text-white pt-16">
       <Navbar />
@@ -22,23 +30,11 @@ export default function Courses() {
             </p>
           </div>
 
-          {isLoading ? (
-            <div className="flex justify-center items-center py-20">
-              <Loader2 className="w-12 h-12 text-primary animate-spin" />
-            </div>
-          ) : error ? (
-            <div className="flex flex-col items-center justify-center py-20 text-center">
-              <ServerCrash className="w-16 h-16 text-destructive mb-4" />
-              <h3 className="text-xl font-bold text-white">Unable to load courses</h3>
-              <p className="text-gray-500 mt-2">Please try again later.</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {courses?.map((course, idx) => (
-                <CourseCard key={course.id} course={course} index={idx} />
-              ))}
-            </div>
-          )}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {STATIC_COURSES.map((course, idx) => (
+              <CourseCard key={course.id} course={course} index={idx} />
+            ))}
+          </div>
         </div>
       </section>
       <Footer />
