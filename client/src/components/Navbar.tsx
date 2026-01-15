@@ -30,7 +30,7 @@ export const Navbar = () => {
             </Link>
           ))}
           <Link href="/courses">
-            <a className="px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 rounded-full text-sm font-medium transition-all">
+            <a className="px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 rounded-full text-sm font-medium transition-all flex items-center gap-1">
               Get Started
             </a>
           </Link>
