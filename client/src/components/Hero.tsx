@@ -7,14 +7,14 @@ export function Hero() {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Dynamic Background with Overlay */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-black">
         {/* Abstract Tech Loop GIF */}
         <img 
           src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" 
           alt="Tech Background"
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-40 mix-blend-screen"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#0f172a]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 text-center">
