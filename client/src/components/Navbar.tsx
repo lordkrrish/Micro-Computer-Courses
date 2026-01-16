@@ -9,7 +9,7 @@ export const Navbar = () => {
     { name: "All Courses", href: "/courses" },
     { name: "Portal", href: "/auth" },
     { name: "About Us", href: "/about" },
-    { name: "Contact Info", href: "/contact" },
+    { name: "Login", href: "/auth" },
   ];
 
   return (

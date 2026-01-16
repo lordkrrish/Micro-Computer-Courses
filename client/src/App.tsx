@@ -20,8 +20,9 @@ function Router() {
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/owner" component={OwnerPage} />
       <Route path="/auth" component={StudentAuth} />
+      <Route path="/login" component={StudentAuth} />
+      <Route path="/contact" component={StudentAuth} />
       <Route path="/about" component={About} />
-      <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>
   );
