@@ -13,12 +13,18 @@ const FEATURED_COURSES = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0f172a] text-white pt-16">
+    <div className="min-h-screen bg-black text-white pt-16">
       <Navbar />
       <Hero />
       
-      <section className="py-24 relative bg-black/30">
-        <div className="container mx-auto px-4">
+      <section className="py-24 relative overflow-hidden bg-black">
+        {/* Background Accents (Synced with Courses) */}
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+          <div className="absolute -top-24 -left-24 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] animate-pulse" />
+          <div className="absolute top-1/2 -right-24 w-[400px] h-[400px] bg-secondary/20 rounded-full blur-[100px] animate-pulse" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
               Featured <span className="text-gradient">Programs</span>

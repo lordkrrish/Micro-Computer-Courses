@@ -18,6 +18,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/courses" component={Courses} />
       <Route path="/owner" component={OwnerPage} />
+      <Route path="/auth" component={StudentAuth} />
       <Route path="/about" component={About} />
       <Route component={NotFound} />
     </Switch>
