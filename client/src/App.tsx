@@ -9,6 +9,7 @@ import Courses from "@/pages/Courses";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Dashboard from "@/pages/Dashboard";
+import OwnerPage from "@/pages/OwnerPage";
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/courses" component={Courses} />
       <Route path="/dashboard" component={Dashboard} />
+      <Route path="/owner" component={OwnerPage} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />

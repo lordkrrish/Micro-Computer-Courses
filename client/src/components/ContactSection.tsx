@@ -2,6 +2,25 @@ import { motion } from "framer-motion";
 import { User, Phone, MapPin, Mail } from "lucide-react";
 
 export function ContactSection() {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const inquiry = {
+      id: Date.now(),
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      date: new Date().toLocaleString(),
+    };
+    
+    // Save to localStorage
+    const existing = JSON.parse(localStorage.getItem("inquiries") || "[]");
+    localStorage.setItem("inquiries", JSON.stringify([...existing, inquiry]));
+    
+    alert("Inquiry sent successfully!");
+    (e.target as HTMLFormElement).reset();
+  };
+
   return (
     <section className="py-24 bg-gradient-to-b from-[#0f172a] to-black relative overflow-hidden">
       {/* Decorative Orbs */}
@@ -71,19 +90,19 @@ export function ContactSection() {
 
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-2xl opacity-20 blur-xl transform rotate-3" />
-              <form className="glass-card p-6 rounded-2xl relative space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <form className="glass-card p-6 rounded-2xl relative space-y-4" onSubmit={handleSubmit}>
                 <h3 className="text-xl font-bold text-white mb-4">Quick Inquiry</h3>
                 <div>
                   <label className="block text-xs font-medium text-gray-400 mb-1">Your Name</label>
-                  <input type="text" className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="John Doe" />
+                  <input name="name" type="text" required className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="John Doe" />
                 </div>
                 <div>
                   <label className="block text-xs font-medium text-gray-400 mb-1">Email (Necessary)</label>
-                  <input type="email" required className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="yourname@gmail.com" />
+                  <input name="email" type="email" required className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="yourname@gmail.com" />
                 </div>
                 <div>
                   <label className="block text-xs font-medium text-gray-400 mb-1">Phone Number (Optional)</label>
-                  <input type="tel" className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="+91..." />
+                  <input name="phone" type="tel" className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="+91..." />
                 </div>
                 <button type="submit" className="w-full py-3 rounded-lg bg-gradient-to-r from-primary to-cyan-600 text-black font-bold hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all">
                   Send Message
