@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Code2, Monitor, Terminal, Cpu } from "lucide-react";
+import { Code2, Monitor, Terminal, Cpu, Layout, Globe, Braces, Database, BookOpen, Layers } from "lucide-react";
 import { Link } from "wouter";
+import { SiPython, SiHtml5, SiCss3, SiJavascript, SiJava } from "react-icons/si";
 
 interface CourseCardProps {
   course: {
@@ -10,13 +11,17 @@ interface CourseCardProps {
   index: number;
 }
 
-// Map course names to icons
+// Map course names to icons/logos
 const getIcon = (name: string) => {
   const n = name.toUpperCase();
-  if (n.includes("HTML")) return <Code2 className="w-10 h-10 text-orange-400" />;
-  if (n.includes("HARDWARE")) return <Cpu className="w-10 h-10 text-cyan-400" />;
-  if (n.includes("ADCA")) return <Terminal className="w-10 h-10 text-purple-400" />;
-  return <Monitor className="w-10 h-10 text-emerald-400" />;
+  if (n.includes("HTML")) return <SiHtml5 className="w-12 h-12 text-[#E34F26]" />;
+  if (n.includes("CSS")) return <SiCss3 className="w-12 h-12 text-[#1572B6]" />;
+  if (n.includes("PYTHON")) return <SiPython className="w-12 h-12 text-[#3776AB]" />;
+  if (n.includes("JAVA")) return <SiJava className="w-12 h-12 text-[#007396]" />;
+  if (n.includes("HARDWARE")) return <Cpu className="w-12 h-12 text-cyan-400" />;
+  if (n.includes("ADCA")) return <Layers className="w-12 h-12 text-purple-400" />;
+  if (n.includes("DCA")) return <BookOpen className="w-12 h-12 text-emerald-400" />;
+  return <Monitor className="w-12 h-12 text-primary" />;
 };
 
 export function CourseCard({ course, index }: CourseCardProps) {

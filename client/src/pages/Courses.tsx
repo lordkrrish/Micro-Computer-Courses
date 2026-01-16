@@ -18,8 +18,14 @@ export default function Courses() {
   return (
     <div className="min-h-screen bg-[#0f172a] text-white pt-16">
       <Navbar />
-      <section id="courses" className="py-24 relative">
-        <div className="container mx-auto px-4">
+      <section id="courses" className="py-24 relative overflow-hidden">
+        {/* Course-specific Background Accents */}
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+          <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
+          <div className="absolute top-1/2 -right-24 w-80 h-80 bg-secondary/10 rounded-full blur-[100px]" />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
               Our <span className="text-gradient">Premium Courses</span>
