@@ -22,12 +22,18 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0f172a] text-white pt-16">
+    <div className="min-h-screen bg-black text-white pt-16">
       <Navbar />
       
       {/* Hero Section */}
-      <div id="about" className="py-24 container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-20">
+      <div id="about" className="py-24 container mx-auto px-4 relative overflow-hidden">
+        {/* Background Accents (Synced with Courses) */}
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+          <div className="absolute -top-24 -left-24 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] animate-pulse" />
+          <div className="absolute top-1/2 -right-24 w-[400px] h-[400px] bg-secondary/20 rounded-full blur-[100px] animate-pulse" />
+        </div>
+
+        <div className="relative z-10 max-w-3xl mx-auto text-center mb-20">
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-8">About Us</h2>
           <p className="text-lg text-gray-400 leading-relaxed">
             MicroComputer is a premier institute dedicated to providing high-quality computer education. 
