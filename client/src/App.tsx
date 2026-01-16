@@ -10,6 +10,7 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Dashboard from "@/pages/Dashboard";
 import OwnerPage from "@/pages/OwnerPage";
+import StudentAuth from "@/pages/StudentAuth";
 
 function Router() {
   return (
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/courses" component={Courses} />
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/owner" component={OwnerPage} />
+      <Route path="/auth" component={StudentAuth} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
