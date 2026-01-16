@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useLocation } from "wouter";
+import { useLocation, Link } from "wouter";
 
 export function Footer() {
   const [location] = useLocation();
