@@ -10,7 +10,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0 bg-black">
         {/* Abstract Tech Loop GIF */}
         <img 
-          src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" 
+          src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpndmZ6Zmd6Zmd6Zmd6Zmd6Zmd6Zmd6Zmd6Zmd6Zmd6Zmd6Zmd6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKSjPXYqCgT2zAA/giphy.gif" 
           alt="Tech Background"
           className="w-full h-full object-cover opacity-40 mix-blend-screen"
         />
